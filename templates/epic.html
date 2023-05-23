@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Earth Polychromatic Imaging Camera {% endblock %}</h1>
+    <div class="content">
+            <div class="category">
+                <p><b>{{ epic['date'] }}</b></p>
+                <div class="image">
+                <img src={{ epic['url'] }}  width="512" height="512">
+                    </div>
+
+                    <p class="name">Latitude of centroid = {{ epic['coordinates']['lat'] }}</p>
+                    <p class="name">Longitude of centroid = {{ epic['coordinates']['lon'] }}</p>
+            </div>
+    </div>
+{% endblock %}

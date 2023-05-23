@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Astronomy Picture of The Day {% endblock %}</h1>
+    <div class="content">
+            <div class="category">
+                <p><b>#{{ apod['date'] }}</b></p>
+                <div class="image">
+                <img src= {{ apod['url']}} width="512" height="512">
+                    </div>
+                <b>
+                    <p class="name">{{ apod['title'] }}</p>
+                </b>
+                <p>{{ apod['explanation'] }}</p>
+
+
+            </div>
+    </div>
+{% endblock %}
