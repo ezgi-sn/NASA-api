@@ -38,7 +38,6 @@ def epic():
     response = requests.get(url_epic, params=params).json()
     json_obj = json.dumps(response)
     dict = json.loads(json_obj)
-
     YEAR = '2023'
     MONTH = '05'
     DAY = '21'
