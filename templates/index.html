@@ -2,7 +2,18 @@
 
 {% block content %}
     <!--<h1 class="title">{% block title %} Near Earth Object {% endblock %}</h1>-->
+    <h1 class="title">Close Approach Data For the Astroid #3542519</h1>
     <div class="content">
 
+        {% for i in list %}
+            <div class="category">
+                <b>#{{ list.index(i)+1 }}</b>
+                <p>Closest Approach Date = {{ i.get('close_approach_date_full') }}</p>
+                <p>Relative Velocity = {{ i.get("relative_velocity")['kilometers_per_hour'] }} kilometers per hour</p>
+                <p>Orbiting Body = {{ i.get('orbiting_body') }}</p>
+
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

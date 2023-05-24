@@ -58,18 +58,18 @@ def epic():
 
 @app.route('/')
 def index():
-    URL_NeoFeed = "https://api.nasa.gov/neo/rest/v1/feed"
+    asteroid_id = '3542519'
+    URL_NeoLookup = "https://api.nasa.gov/neo/rest/v1/neo/" + asteroid_id
     params = {
         'api_key': apiKey,
-        'start_date': '2020-01-22',
-        'end_date': '2020-01-23'
     }
 
-    response = requests.get(URL_NeoFeed, params=params).json()
+    response = requests.get(URL_NeoLookup, params=params).json()
     json_obj = json.dumps(response)
     dict = json.loads(json_obj)
-    print(dict['links']['self'])
-    return render_template('index.html')
+    list_of_close_approach = [response['close_approach_data']]
+    list = list_of_close_approach[0][:10]
+    return render_template('index.html', list=list)
 
 
 if __name__ == '__main__':

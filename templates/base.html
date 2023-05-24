@@ -40,7 +40,7 @@
         nav a {
             color: #0B3D91;
             font-size: 3em;
-            margin-left: 50px;
+            margin-left: 40px;
             text-decoration: none;
         }
         .center {
@@ -62,7 +62,8 @@
 </head>
 <body>
     <nav>
-        <a href>Asteroids NeoWs</a>
+        <img src="static/nasa_logo.png" alt="" width="60" height="48" style="margin-bottom: 15px">
+        <a href="{{ url_for('index') }}">Asteroids NeoWs</a>
         <a href="{{ url_for('apod') }}">APOD</a>
         <a href="{{ url_for('epic') }}">EPIC</a>
     </nav>
